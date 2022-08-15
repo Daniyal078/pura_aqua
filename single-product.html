@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../card title/CSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../card title/images/fave-icon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Ｐｕｒａ Ａｑｕａ</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">Ｐｕｒａ Ａｑｕａ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="home-page.html" class="nav-link">Home</a>
+                    </li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Catagory</button>
+                        <div class="dropdown-content">
+                            <a href="../card title/index.html">Bottles</a>
+                            <a href="../card title/category-page.html">Thermos</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Gallary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Learn more</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid py-5">
+        <div class="card">
+            <a href="index.html" class="go-back-btn">GO BACK</a>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-8">
+                    <img src="" alt="" id="SINGLE_PRODUCT_img">
+                </div>
+                <div class="col-12 col-sm-12 col-md-4">
+                    <!-- <h4>
+                        <span>ID : </span> <span id="SINGLE_PRODUCT_id"></span>
+                    </h4> -->
+                    <h4>
+                        <span><strong>TITLE :</strong></span> <span id="SINGLE_PRODUCT_title"></span>
+                    </h4>
+                    <h4>
+                        <span><strong> DESCRIPTION :</strong></span><span id="SINGLE_PRODUCT_description"></span>
+                    </h4>
+                    <h4>
+                        <span><strong>PRICE :</strong></span><span id="SINGLE_PRODUCT_price"></span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>Ｐｕｒａ Ａｑｕａ
+        <p class="section_discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, iure et accusantium
+            eos a itaque quae,
+            recusandae modi maxime asperiores quia eius? Assumenda deserunt alias debitis qui. Necessitatibus, aliquid
+            Vel, iure et accusantium eos a itaque quae,
+            sint!</p>
+    </section>
+    <footer class="footer-distributed">
+        </div>
+        <div class="footer-left">
+            <p class="footer-links">
+                <a class="link-1" href=#>Home</a>
+                <a href=#>Contact</a>
+                <a href=#>About</a>
+                <a href=#>Shop</a>
+                <a href=#>Search</a>
+                <a href="#">Privscy policy </a>
+                <a href="#">Refund and Return Policy </a>
+            </p>
+            <div class="social_icons">
+                <a href="https://www.facebook.com/Fragrance-world-105869711947812" target="_blank"
+                    class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/im_daniyal_ali/" class="fa fa-instagram" target="_blank"></a>
+                <a href="https://twitter.com/DanyalAli0" class="fa fa-twitter" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCo_YqZZJQTfvbEdZ1-WyVdQ" target="_blank"
+                    class="fa fa-youtube"></a>
+            </div>
+            <p>pura Aqua&copy; 2022</p>
+        </div>
+    </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-data.js"></script>
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get('product-id'),
+        });
+        let id = params.some_key;
+        if (PRODUCTS && PRODUCTS.length) {
+            const SINGLE_PRODUCT = PRODUCTS.filter(function (el) {
+                return el.id == id;
+            })
+            if (SINGLE_PRODUCT) {
+                $('#SINGLE_PRODUCT_id').html(SINGLE_PRODUCT[0].id);
+                $('#SINGLE_PRODUCT_title').html(SINGLE_PRODUCT[0].title);
+                $('#SINGLE_PRODUCT_description').html(SINGLE_PRODUCT[0].description);
+                $('#SINGLE_PRODUCT_price').html('RS ' + SINGLE_PRODUCT[0].price);
+                $('#SINGLE_PRODUCT_img').attr('src', SINGLE_PRODUCT[0].img);
+            }
+        }
+    </script>
+</body>
+
+</html>
